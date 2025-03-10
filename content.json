@@ -1,0 +1,99 @@
+{
+    "profile": {
+        "name": "Thibaud [Tibo] Ardoin",
+        "title": "\\( f_{\\text{research}} : \\text{@ FUB} \\to \\mathbb{AI}_{\\text{TrustWorthiness}} \\)",
+        "image": "images/git_hub_profile.png",
+        "description": "Doctorant en Vision par Ordinateur • Spécialisé en Deep Learning et Analyse d'Images",
+        "social": {
+            "email": "thibaud.ardoin@fu-berlin.de",
+            "linkedin": "https://www.linkedin.com/in/thibaud-ardoin-6ab5321a2/",
+            "scholar": "https://scholar.google.com/citations?user=bgy5iasAAAAJ&hl=en",
+            "github": "https://github.com/Thibaud-Ardoin"
+        }
+    },
+    "cv": {
+        "about": {
+            "title": "Current Position",
+            "content": "Doctor student and research assistant at Freie Universität Berlin, working on Interpretable AI."
+        },
+        "education": [
+            {
+                "period": "2023 - Présent",
+                "title": "Doctor Student",
+                "institution": "Freie Universität Berlin",
+                "description": "Working on Interpretable AI."
+            },
+            {
+                "period": "2019 - 2020",
+                "title": "Mathematique et Vision par Ordinateur (MVA)",
+                "institution": "Université Paris-Saclay",
+                "description": "Specialisation in Deep Learning and Computer Vision."
+            },
+            {
+                "period": "2017 - 2019",
+                "title": "CS Departement, parcours Jaque Hadamard",
+                "institution": "ENS Paris-Saclay",
+                "description": "From Logic to Discrete Mathematics discovering Theoretical Computer Science."
+            },
+            {
+                "period": "2014 - 2017",
+                "title": "Classe Préparatoire aux Grandes Écoles",
+                "institution": "Lycée Massena",
+                "description": "Intensive Math, Physics, Chemistry, and Computer Science."
+            }
+        ],
+        "skills": {
+            "programming": ["Python", "JavaScript", "C++"],
+            "frameworks": ["PyTorch", "TensorFlow", "p5.js"]
+        }
+    },
+    "projects": [
+        {
+            "title": "Projet 1",
+            "description": "Description du projet avec les technologies utilisées et les résultats obtenus.",
+            "image": "images/project1.jpg",
+            "github": "https://github.com/Thibaud-Ardoin/project1",
+            "demo": "https://demo-project1.com"
+        },
+        {
+            "title": "Projet 2",
+            "description": "Description du deuxième projet avec ses spécificités et réalisations.",
+            "image": "images/project2.jpg",
+            "github": "https://github.com/Thibaud-Ardoin/project2",
+            "demo": "https://demo-project2.com"
+        },
+        {
+            "title": "Projet 3 sbskgb",
+            "description": "Description du deuxième projet avec ses spécificités et réalisations.",
+            "image": "images/project2.jpg",
+            "github": "https://github.com/Thibaud-Ardoin/project2",
+            "demo": "https://demo-project2.com"
+        }
+    ],
+    "personal_projects": [
+        {
+            "title": "Art Génératif avec P5.js",
+            "description": "Explorations créatives utilisant P5.js pour créer des œuvres d'art génératives et interactives.",
+            "image": "p5js-example.png",
+            "links": {
+                "github": "#",
+                "demo": "#"
+            }
+        }
+    ],
+    "blog_posts": [
+        {
+            "title": "Titre du Post",
+            "date": "12 Avril 2024",
+            "tags": ["Deep Learning", "Research"],
+            "excerpt": "Aperçu du post avec une brève description du contenu...",
+            "link": "#"
+        }
+    ],
+    "pages": {
+        "index.html": "<div class='welcome-section'><h1>Bienvenue sur mon site</h1><p>Je suis doctorant en Vision par Ordinateur, spécialisé en Deep Learning et Analyse d'Images.</p></div>",
+        "blog.html": "<div class='blog-posts'><h2>Blog</h2><p>Contenu du blog à venir...</p></div>",
+        "cv.html": "<div class='cv-content'><h2>Curriculum Vitae</h2><p>Contenu du CV à venir...</p></div>",
+        "personal.html": "<div class='personal-projects'><h2>Projets Personnels</h2><p>Contenu des projets personnels à venir...</p></div>"
+    }
+} 
