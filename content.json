@@ -21,13 +21,21 @@
                 "period": "2023 - Présent",
                 "title": "Doctor Student",
                 "institution": "Freie Universität Berlin",
-                "description": "Working on Interpretable AI."
+                "description": "Working on Interpretable AI.",
+                "model3d": "artefacts/fu-coin/fu-coin.gltf",
+                "model3dOptions": {
+                    "fastRotation": true
+                }
             },
             {
                 "period": "2019 - 2020",
                 "title": "Mathematique et Vision par Ordinateur (MVA)",
                 "institution": "Université Paris-Saclay",
-                "description": "Specialisation in Deep Learning and Computer Vision."
+                "description": "Specialisation in Deep Learning and Computer Vision.",
+                "model3d": "artefacts/ensps-flag/ensps-flag.gltf",
+                "model3dOptions": {
+                    "enspsFlag": true
+                }
             },
             {
                 "period": "2017 - 2019",

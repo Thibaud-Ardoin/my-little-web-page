@@ -247,10 +247,11 @@ body {
 .projects-grid {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
-    max-width: 1200px;
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .project-card {
@@ -332,8 +333,9 @@ body {
 
 /* Styles pour la page About */
 .about-content {
-    max-width: 800px;
-    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2c3e50;
 }
 
 .about-section {
@@ -368,7 +370,7 @@ body {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .skill-category ul {
@@ -638,47 +640,25 @@ body {
 
 /* Ajuster les sections du CV */
 .cv-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    display: block;
+    width: 100%;
     margin: 2rem 0;
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateY(20px);
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.cv-section:nth-child(even) {
-    transform: translateX(100px);
-}
-
-.cv-section:nth-child(even) .section-content {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.cv-section:nth-child(even) .section-extra {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.cv-section.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.section-content {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: 15px;
 }
 
-.section-extra {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-style: italic;
-    color: #666;
+.cv-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-content {
+    width: 100%;
 }
 
 .section-header {
@@ -709,81 +689,115 @@ body {
     width: 100px;
 }
 
+.section-body {
+    color: #34495e;
+    line-height: 1.6;
+}
+
+.section-extra {
+    display: none;
+}
+
 /* Styles pour l'éducation */
-.education-item {
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
+.education-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.cv-section.visible .education-item {
+.education-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
     opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.2s;
+    transform: none;
+    align-items: stretch;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1rem;
 }
 
-.cv-section.visible .education-item:nth-child(2) {
-    transition-delay: 0.4s;
+.education-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-.cv-section.visible .education-item:nth-child(3) {
-    transition-delay: 0.6s;
+.education-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.education-extra {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 100%;
+    min-height: 300px;
 }
 
 .education-period {
     color: #3498db;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
 }
 
 .education-title {
     font-size: 1.3rem;
     color: #2c3e50;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
 }
 
 .education-institution {
     color: #7f8c8d;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
 }
 
 .education-description {
     color: #34495e;
     line-height: 1.6;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .education-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .education-content {
+        min-height: auto;
+    }
+
+    .education-extra {
+        min-height: 250px;
+    }
 }
 
 /* Styles pour les compétences */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
 .skill-category {
     background: rgba(255, 255, 255, 0.05);
     padding: 1.5rem;
     border-radius: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-}
-
-.cv-section.visible .skill-category {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.cv-section.visible .skill-category:nth-child(1) {
-    transition-delay: 0.2s;
-}
-
-.cv-section.visible .skill-category:nth-child(2) {
-    transition-delay: 0.4s;
 }
 
 .skill-category h3 {
@@ -804,25 +818,6 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
     transition: transform 0.3s ease;
-    opacity: 0;
-    transform: translateX(-10px);
-}
-
-.cv-section.visible .skill-item {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.cv-section.visible .skill-item:nth-child(1) {
-    transition-delay: 0.3s;
-}
-
-.cv-section.visible .skill-item:nth-child(2) {
-    transition-delay: 0.4s;
-}
-
-.cv-section.visible .skill-item:nth-child(3) {
-    transition-delay: 0.5s;
 }
 
 .skill-item:hover {
@@ -851,4 +846,56 @@ body {
         padding: 1rem;
         text-align: center;
     }
+
+    .education-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .education-item:nth-child(odd) .education-content,
+    .education-item:nth-child(even) .education-content {
+        grid-column: 1;
+        text-align: left;
+        padding: 1rem;
+    }
+
+    .education-extra {
+        display: none;
+    }
+}
+
+.model-viewer-container {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.model-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.loading-message, .error-message {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 10;
+}
+
+.error-message {
+    background: rgba(255, 0, 0, 0.5);
 } 

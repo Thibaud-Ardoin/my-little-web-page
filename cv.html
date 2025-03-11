@@ -8,11 +8,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Support pour les modules ES6 -->
+    <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.157.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.157.0/examples/jsm/",
+            "three/addons/loaders/GLTFLoader.js": "https://unpkg.com/three@0.157.0/examples/jsm/loaders/GLTFLoader.js",
+            "three/addons/loaders/KTX2Loader.js": "https://unpkg.com/three@0.157.0/examples/jsm/loaders/KTX2Loader.js"
+        }
+    }
+    </script>
 </head>
 <body>
     <div id="p5-background"></div>
     
     <main class="layout">
+        <aside class="profile-card">
+            <img class="profile-image" src="" alt="Profile">
+            <h1></h1>
+            <div class="bio"></div>
+            <div class="social-links">
+                <a href="" class="social-icon" target="_blank" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="" class="social-icon" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="social-icon" target="_blank" title="Google Scholar">
+                    <i class="fas fa-graduation-cap"></i>
+                </a>
+                <a href="" class="social-icon" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <nav class="navigation">
+                <a href="index.html" class="nav-item">Accueil</a>
+                <a href="projects.html" class="nav-item">Projets</a>
+                <a href="blog.html" class="nav-item">Blog</a>
+                <a href="cv.html" class="nav-item">Curriculum vitae</a>
+                <a href="personal.html" class="nav-item">Projets Personnels</a>
+            </nav>
+        </aside>
+        
         <div class="main-content">
             <div class="content-container" style="min-height: 100vh; padding: 2rem;">
                 <div class="projects-grid">
@@ -22,8 +62,7 @@
         </div>
     </main>
 
-    <script src="js/loadTemplate.js"></script>
-    <script src="js/loadContent.js"></script>
+    <script type="module" src="js/loadContent.js"></script>
     <script src="sketch.js?v=2"></script>
 </body>
 </html> 

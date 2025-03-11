@@ -44,7 +44,7 @@ class Blob {
     }
 
     reset() {
-        this.size = random(0, this.size);
+        this.size = random(30, this.size);
     }
 
 
