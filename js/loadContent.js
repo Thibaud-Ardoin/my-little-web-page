@@ -159,17 +159,17 @@ async function initializeModel(containerId) {
                     float waveStrength = 3.0; // Global intensity multiplier
 
                     // Wave motion with better coherence
-                    float wave1 = sin(pos.x * 6.0 + time * 2.0) * 0.1;
-                    float wave2 = sin(pos.y * 4.0 + time * 1.5) * 0.08;
-                    float wave3 = sin((pos.x + pos.y) * 5.0 + time * 1.8) * 0.06;
+                    float wave1 = sin(-pos.x * 6.0 - time + 2.0) * 0.1;
+                    float wave2 = sin(-pos.y * 4.0 - time + 1.5) * 0.08;
+                    float wave3 = sin(-(pos.x + pos.y) * 5.0 + time * 1.8) * 0.06;
                     
                     // Smooth amplitude control from fixed edge
                     float amplitude = 0.3 + 0.7 * smoothstep(0.0, 1.0, pos.x);
                     pos.z += (wave1 + wave2 + wave3) * amplitude * waveStrength / 2.0;
 
                     // Wind effect
-                    float windX = sin(time * 1.5 + pos.y * 3.0) * 0.02 * amplitude;
-                    float windY = cos(time * 1.3 + pos.x * 2.5) * 0.2 * amplitude;
+                    float windX = sin(time * 1.5 - pos.y * 3.0) * 0.02 * amplitude;
+                    float windY = cos(time * 1.3 - pos.x * 2.5) * 0.2 * amplitude;
                     
                     pos.x += windX * amplitude * waveStrength;
                     pos.y += windY * amplitude * waveStrength;
@@ -220,6 +220,37 @@ async function initializeModel(containerId) {
                 opacity: { value: 1.0 },
                 map: { value: null },
                 useMap: { value: false },
+                color: { value: new THREE.Color(0x2196F3) }
+            }
+        };
+
+        // Définition du shader pour l'effet de rebond
+        const jumpyShader = {
+            vertexShader: `
+                varying vec2 vUv;
+                uniform float time;
+
+                void main() {
+                    vUv = uv;
+                    vec3 pos = position;
+
+                    // Effet de rebond
+                    float bounce = abs(sin(time * 3.0 + pos.x * 5.0)) * 0.1;
+                    pos.y += bounce;
+
+                    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+                }
+            `,
+            fragmentShader: `
+                varying vec2 vUv;
+                uniform vec3 color;
+
+                void main() {
+                    gl_FragColor = vec4(color, 1.0);
+                }
+            `,
+            uniforms: {
+                time: { value: 0.0 },
                 color: { value: new THREE.Color(0x2196F3) }
             }
         };

@@ -28,6 +28,16 @@
                 }
             },
             {
+                "period": "2020-2021",
+                "title": "Vita LAB",
+                "institution": "Ecole Polytechnique de Lausanne",
+                "description": "Research assistant under Alexander Alahi working on a transportation problem.",
+                "model3d": "artefacts/epfl-logo/epfl-logo.gltf",
+                "model3dOptions": {
+                    "jumpyLetter": true
+                }
+            },
+            {
                 "period": "2019 - 2020",
                 "title": "Mathematique et Vision par Ordinateur (MVA)",
                 "institution": "Université Paris-Saclay",
